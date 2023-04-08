@@ -1,0 +1,13 @@
+.btn{
+    color: white;
+    background-color: #9a366b ;
+    border:1px solid black;
+}
+.btn:hover {
+    color: #f9f7f4;
+    /* size: 10vh; */
+    border:1px solid black;
+    background-color: #5f1a3e ;
+    /* border-color: #5b288e; */
+}
+
