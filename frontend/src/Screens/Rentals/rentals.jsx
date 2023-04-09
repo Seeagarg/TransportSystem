@@ -4,6 +4,7 @@ import Footer from '../../Components/Footer';
 import { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Rentals_register from './Rentals_register';
+import BlackPink from '../../Images/BlackPink.png'
 
 function Rentals() {
  
@@ -31,14 +32,12 @@ function Rentals() {
   return (
     <div>
       <Header/>
-      <Rentals_register/>
-
-
-
-
-
-
-
+      
+      <div  style={{backgroundImage:`url(${BlackPink})`,backgroundSize:"contain,cover"}}>
+    <div className='col-sm-md-6'>
+    <Rentals_register/>
+    </div>
+    </div>
       <Footer/>
     </div>
   )

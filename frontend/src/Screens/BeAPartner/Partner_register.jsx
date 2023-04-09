@@ -7,6 +7,7 @@ import {toast} from "react-toastify";
 import axios from 'axios';
 import { Link, Navigate, Outlet } from "react-router-dom" ;
 import { useNavigate } from "react-router-dom";
+import BlackPink from '../../Images/BlackPink.png'
 
 function Partner_register(){
 
@@ -61,7 +62,7 @@ function Partner_register(){
   }
 
   return (
-    <div>
+    <div style={{backgroundImage:`url(${BlackPink})`,backgroundSize:"contain,cover"}}>
     <div style={mystyle.backCover}  >
     <div style={{marginTop:"20vh"}}>
     <p className='fs-3 fw-bold text-light'>Register Your Vehicle here...</p>

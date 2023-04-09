@@ -3,11 +3,12 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import BlackPink from '../../Images/BlackPink.png'
 function Rentals_register() {
     let mystyle = {
         backCover: {
             // position: 'absolute',
-            opacity: 0.7, 
+            opacity: 0.4, 
             border: " solid ",
             width:"70vw",
             marginLeft:"10vw",
@@ -36,7 +37,8 @@ function Rentals_register() {
   const [rentPrice, setRentPrice] = useState("");
   const [discription, setDescription] = useState("");
   return (
-    <div>
+    <div className="">
+    <div style={{padding:"20vh"}}>
       <Form className=" bg-light text-dark p-3 text-start  rounded " >
       <p className='fs-5 fw-bold text-center'>Personal Details</p>
       <hr />
@@ -125,6 +127,7 @@ function Rentals_register() {
         Register
       </Button>
     </Form>
+    </div>
     </div>
   )
 }
