@@ -4,6 +4,17 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 function Rentals_register() {
+    let mystyle = {
+        backCover: {
+            // position: 'absolute',
+            opacity: 0.7, 
+            border: " solid ",
+            width:"70vw",
+            marginLeft:"10vw",
+            // marginTop:"10vh"
+           
+          },
+    }
 
     const onSubmit = (event) => {
         event.preventDefault();
