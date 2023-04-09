@@ -10,6 +10,7 @@ import Footer from './Components/Footer';
 import Home_Page from './Screens/Home/Home_page';
 import About from './Screens/About/About';
 import GetCabPage from './Screens/GetCab/GetCabPage';
+import Rentals from './Screens/Rentals/Rentals';
 
 
 function App() {
@@ -26,6 +27,8 @@ function App() {
         <Route path='/Login' element={<Login/>}/>
         <Route path='/Partner' element={<Partner/>}/>
         <Route path='/getcab' element={<GetCabPage/>}/>
+        <Route path='/rentals' element={<Rentals/>}/>
+
         
       </Routes>
     </Router>
