@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../../Components/Header";
+// import FormCar from "./FormCar";
 // import Carousel from 'react-bootstrap/Carousel';
 //
 import { useEffect, useState } from "react";
@@ -26,6 +27,7 @@ function Home_Page() {
       <div>
         <Header title={"Street Cab"}/>
         <Carousel_Component/>
+        {/* <FormCar/> */}
         <Lil_intro/>
         <Footer/>
       </div>

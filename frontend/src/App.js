@@ -26,6 +26,7 @@ function App() {
         <Route path='/Login' element={<Login/>}/>
         <Route path='/Partner' element={<Partner/>}/>
         <Route path='/getcab' element={<GetCabPage/>}/>
+        
       </Routes>
     </Router>
     {/* <Footer/> */}

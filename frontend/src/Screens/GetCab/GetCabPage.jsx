@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 // import Header from '../Components/Header'
 import Black_tag from '../../Images/Black_tag.jpg'
 import { Form } from 'react-bootstrap'
@@ -7,15 +7,40 @@ import { Carousel } from 'react-bootstrap'
 import Footer from '../../Components/Footer';
 import InfoIcon from '@mui/icons-material/Info';
 
+
 function GetCabPage() {
-  const cars = [
-  {
 
-  },
-  {
+  const [Cars,setCars] = useState([]);
 
+  let user = JSON.parse(localStorage.getItem('user-application'))
+   console.log("user  ---> ", user.data.address)
+  const Url = `http://localhost:8080/driver/search/${user.data.address}`;
+
+
+  const getCar=async()=>{
+  let response = await fetch(Url);
+  // console.log(" response from backend ",await response.json());
+  response= await response.json()
+  setCars(response);
+  console.log("Cars ", Cars)
   }
-  ]
+  useEffect(() => {
+    getCar();
+  },[]);
+
+ 
+
+  
+  // const cars = [
+    
+  // {
+  //   VehicleType:"Jeep",
+  //   DriverName:"Ram",
+  //   PhoneNo:"9876547632"
+  // },
+  // {
+  // }
+  // ]
     const mystyle={
        img:{
         border:"1px solid black",
@@ -24,6 +49,7 @@ function GetCabPage() {
         width:"15vw"
        }
     }
+
   return (
     <div className=''>
     <div className="bg z-1" >
@@ -48,8 +74,6 @@ function GetCabPage() {
         </div>
     </div>
     </div>
-    
-    
         <div className="services " style={{backgroundColor:"rgb(245,245,245)"}}>
         <Carousel>
       <Carousel.Item>
@@ -97,24 +121,30 @@ function GetCabPage() {
     </Carousel>
         </div>
 
-    <div className=" bg-black" style={{border:"1px solid white"}}>
-      <div className="container p-3 "  >
-      <div className="row " >
-        <div className="col-4">
-        <img src="https://www.financialexpress.com/wp-content/uploads/2018/09/1-120.jpg" alt="" style={mystyle.img} />
+    <div className=" bg-black" >
+        {
+          Cars.map((data,index)=>
+          <div className="container p-3 mt-1">
+          <div className="row py-3 rounded" style={{border:"1px solid white"}} >
+        <div className="col-3">
+        <img src="https://cdn5.vectorstock.com/i/1000x1000/68/44/car-logo-with-circle-hand-colorful-logo-vector-22266844.jpg" alt="" style={mystyle.img} />
         </div>
-        <div className="col-4 text-light ">
-       <p className="fs-3 fw-bold"> Car-Type</p>
-       <p className='fs-4'> Driver Name</p>
-       <p className='fs-4'> Phone No</p>
-        </div>
-        <div className="col-4 text-end">
+            <div className=" col-4 text-light ">
+            <p className="fs-3 fw-bold text-light">Vehicle-Type: {data.carType}</p>
+            <p className='fs-4'> Driver Name: {data.name}</p>
+            <p className='fs-4 fw-bold text-light'> Phone No: {data.phone}</p>
+            </div>
+            <div className="col-2 fs-4 fw-bold text-light">
+              rs./km
+            </div>
+            <div className="col-3 text-end">
         <InfoIcon fontSize='large' style={{color:"white"}}/>
         <p className='text-light'>more</p>
-
         </div>
         </div>
-      </div>
+        </div>
+          )
+        } 
     </div>
     </div>
     
